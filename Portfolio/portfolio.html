@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhamad Salimin Dhany| Portfolio</title>
+    <meta name="description" content="Professional portfolio of Muhamad Salimin Dhany, showcasing skills, experience and projects">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e40af',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .bg-blur {
+            backdrop-filter: blur(8px);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .skill-pill {
+            transition: all 0.3s ease;
+        }
+        .skill-pill:hover {
+            transform: scale(1.05);
+        }
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white bg-opacity-80 bg-blur z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary">MSD<span class="text-dark">.</span></a>
+            
+            <!-- Mobile menu button -->
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-dark text-xl"></i>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="#skills" class="hover:text-primary transition-colors">Skills</a></li>
+                <li><a href="#experience" class="hover:text-primary transition-colors">Experience</a></li>
+                <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
+                <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full">
+            <ul class="container mx-auto px-6 py-3 space-y-4">
+                <li><a href="#home" class="block hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#about" class="block hover:text-primary transition-colors">About</a></li>
+                <li><a href="#skills" class="block hover:text-primary transition-colors">Skills</a></li>
+                <li><a href="#experience" class="block hover:text-primary transition-colors">Experience</a></li>
+                <li><a href="#projects" class="block hover:text-primary transition-colors">Projects</a></li>
+                <li><a href="#contact" class="block hover:text-primary transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-light to-blue-50 pt-16">
+        <div class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 animate-on-scroll" style="transform: translateY(20px);">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-primary">Muhamad Salimin Dhany</span></h1>
+                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Full Stack Developer</h2>
+                <p class="text-lg text-gray-600 mb-8">I build exceptional digital experiences that make an impact.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg transition-colors shadow-md">Get in Touch</a>
+                    <a href="#projects" class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg transition-colors">View Work</a>
+                </div>
+                <div class="mt-8 flex space-x-4">
+                    <a href="https://www.linkedin.com/in/muhammad-salimin-dhany-01b0b3283/" class="text-gray-600 hover:text-primary transition-colors"><i class="fab fa-linkedin text-2xl"></i></a>
+                    <a href="https://github.com/Lee-Min-Hann" class="text-gray-600 hover:text-primary transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                    <a href="https://www.instagram.com/lee_min_haan/" class="text-gray-600 hover:text-primary transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center animate-on-scroll" style="transform: translateY(20px);">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-primary absolute -top-4 -left-4 animate-pulse opacity-20"></div>
+                    <img src="WhatsApp Image 2025-05-07 at 16.50.04.jpeg" alt="John Doe" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover relative z-10 border-4 border-white shadow-lg">
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+            <a href="#about" class="text-primary">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pl-12 animate-on-scroll" style="transform: translateY(20px);">
+                    <h3 class="text-2xl font-bold mb-4">My Journey</h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm a passionate Full Stack Developer with over 1 years of experience creating web applications that deliver exceptional user experiences. My journey in tech began when I built my first website at 19, and I've been hooked ever since.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        I specialize in JavaScript ecosystems, with expertise in React, Node.js, and modern web technologies. I'm driven by solving complex problems and turning ideas into reality through clean, efficient code.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        When I'm not coding, you'll find me hiking, reading sci-fi novels, or experimenting with new technologies.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-graduation-cap text-primary text-xl mr-2"></i>
+                            <span>BSc in Computer Science</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-primary text-xl mr-2"></i>
+                            <span>North Jakarta, IDN</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-briefcase text-primary text-xl mr-2"></i>
+                            <span>9 Month Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Skills</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style="transform: translateY(20px);">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Frontend Development</h3>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">HTML5</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">CSS3</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">Dart</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">Flutter</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">Tailwind CSS</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">SASS</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">TypeScript</span>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style="transform: translateY(20px);">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Backend Development</h3>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">Laravel</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">PHP</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">Python</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">MySQL</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">RESTful APIs</span>
+                    </div>
+                </div>
+                
+                <!-- Tools & Others -->
+                <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style="transform: translateY(20px);">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Tools & Others</h3>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">Git</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">Github</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">Webpack</span>
+                        <span class="skill-pill bg-blue-100 text-primary px-3 py-1 rounded-full">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Work Experience</h2>
+            
+            <div class="relative border-l-2 border-primary pl-8 ml-4 md:ml-12 space-y-12">
+                <!-- Job 1 -->
+                <div class="animate-on-scroll" style="transform: translateY(20px);">
+                    <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] border-4 border-white"></div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-bold">Senior Frontend Developer</h3>
+                            <span class="text-gray-500 mt-2 md:mt-0">Jan 2021 - Present</span>
+                        </div>
+                        <h4 class="text-primary font-semibold mb-4">TechCorp Inc.</h4>
+                        <p class="text-gray-600 mb-4">
+                            Led the frontend development team in building a complex SaaS platform with React, TypeScript, and GraphQL. Improved application performance by 40% through code optimization and implementing best practices.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">React</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">TypeScript</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">GraphQL</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">Redux</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Job 2 -->
+                <div class="animate-on-scroll" style="transform: translateY(20px);">
+                    <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] border-4 border-white"></div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-bold">Full Stack Developer</h3>
+                            <span class="text-gray-500 mt-2 md:mt-0">Mar 2018 - Dec 2020</span>
+                        </div>
+                        <h4 class="text-primary font-semibold mb-4">WebSolutions LLC</h4>
+                        <p class="text-gray-600 mb-4">
+                            Developed and maintained multiple client websites and web applications. Collaborated with design and product teams to implement new features and improve user experience. Reduced server response time by 60% through backend optimizations.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">Express</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Job 3 -->
+                <div class="animate-on-scroll" style="transform: translateY(20px);">
+                    <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] border-4 border-white"></div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-bold">Junior Web Developer</h3>
+                            <span class="text-gray-500 mt-2 md:mt-0">Jun 2016 - Feb 2018</span>
+                        </div>
+                        <h4 class="text-primary font-semibold mb-4">Digital Creations</h4>
+                        <p class="text-gray-600 mb-4">
+                            Started as an intern and quickly progressed to a full-time role. Assisted in developing responsive websites for clients across various industries. Learned and implemented modern web development practices.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">HTML</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">CSS</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">jQuery</span>
+                            <span class="bg-blue-100 text-primary text-sm px-3 py-1 rounded-full">PHP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">My Projects</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-16">Here are some of my recent projects. Each one presented unique challenges and opportunities for growth.</p>
+            
+            <div class="mb-8 flex justify-center">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="filter-btn active px-4 py-2 text-sm font-medium text-primary bg-white border border-primary rounded-l-lg hover:bg-primary hover:text-white focus:z-10 focus:bg-primary focus:text-white" data-filter="all">All</button>
+                    <button type="button" class="filter-btn px-4 py-2 text-sm font-medium text-primary bg-white border-t border-b border-primary hover:bg-primary hover:text-white focus:z-10 focus:bg-primary focus:text-white" data-filter="web">Web</button>
+                    <button type="button" class="filter-btn px-4 py-2 text-sm font-medium text-primary bg-white border border-primary rounded-r-lg hover:bg-primary hover:text-white focus:z-10 focus:bg-primary focus:text-white" data-filter="mobile">Mobile</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="web">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=400" alt="E-commerce Platform" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-primary bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-white bg-dark bg-opacity-50 hover:bg-opacity-70 px-4 py-2 rounded-lg transition-colors">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Library Web</h3>
+                        <p class="text-gray-600 mb-4">A full-featured e-commerce platform with product management, cart functionality, and payment processing.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">React</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Node.js</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">MongoDB</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="mobile">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Fitness Tracking App" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-primary bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-white bg-dark bg-opacity-50 hover:bg-opacity-70 px-4 py-2 rounded-lg transition-colors">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Al-Qur'an App</h3>
+                        <p class="text-gray-600 mb-4">A mobile app that helps users track workouts, set goals, and monitor their fitness progress.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">React Native</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Firebase</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Redux</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="web">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Task Management Dashboard" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-primary bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-white bg-dark bg-opacity-50 hover:bg-opacity-70 px-4 py-2 rounded-lg transition-colors">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2"></h3>
+                        <p class="text-gray-600 mb-4">A comprehensive task management system with real-time updates, team collaboration, and analytics.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Vue.js</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Express</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Socket.io</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="web">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Real Estate Listing Platform" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-primary bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-white bg-dark bg-opacity-50 hover:bg-opacity-70 px-4 py-2 rounded-lg transition-colors">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Todo List App</h3>
+                        <p class="text-gray-600 mb-4">A platform for real estate listings with advanced search, filtering, and interactive maps.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">React</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Django</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">PostgreSQL</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Google Maps API</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="mobile">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Food Delivery App" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-primary bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-white bg-dark bg-opacity-50 hover:bg-opacity-70 px-4 py-2 rounded-lg transition-colors">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Food Delivery App</h3>
+                        <p class="text-gray-600 mb-4">A mobile app for food ordering and delivery with real-time tracking and payment integration.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">React Native</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Node.js</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">MongoDB</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md" data-category="web">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Learning Management System" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-primary bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-white bg-dark bg-opacity-50 hover:bg-opacity-70 px-4 py-2 rounded-lg transition-colors">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Learning Management System</h3>
+                        <p class="text-gray-600 mb-4">An educational platform with course management, student progress tracking, and interactive learning materials.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Angular</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">Express</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">MySQL</span>
+                            <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded-full">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Get In Touch</h2>
+            
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2 animate-on-scroll" style="transform: translateY(20px);">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <p class="text-gray-600 mb-8">Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-primary text-xl mt-1 mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600">muhammaddhany91@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary text-xl mt-1 mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600">+62 89673820468</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary text-xl mt-1 mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-600">North Jakarta, IDN</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/muhammad-salimin-dhany-01b0b3283/" class="text-gray-600 hover:text-primary transition-colors"><i class="fab fa-linkedin text-2xl"></i></a>
+                            <a href="https://github.com/Lee-Min-Hann" class="text-gray-600 hover:text-primary transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                            <a href="https://www.instagram.com/lee_min_haan/" class="text-gray-600 hover:text-primary transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 animate-on-scroll" style="transform: translateY(20px);">
+                    <form id="contact-form" class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-medium py-3 px-4 rounded-lg transition-colors">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-primary">MSD<span class="text-white">.</span></a>
+                    <p class="mt-2 text-gray-400">Building digital experiences that matter.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+                    <a href="#home" class="hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+                    <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
+                    <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 my-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 MSD. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="https://www.linkedin.com/in/muhammad-salimin-dhany-01b0b3283/" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Lee-Min-Hann" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/lee_min_haan/" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Project Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active', 'bg-primary', 'text-white'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active', 'bg-primary', 'text-white');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Scroll Animation
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        function checkScroll() {
+            animateElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    el.classList.add('visible');
+                    el.style.opacity = 1;
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+        
+        // Form Submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In a real application, you would send the form data to a server
+            // For this demo, we'll just show an alert
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
